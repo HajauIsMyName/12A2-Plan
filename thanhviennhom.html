@@ -49,34 +49,50 @@
 
     <main>
         <section class="container mt-5 pt-5">
-            <h2 class="text-center section-title">Danh sách thành viên</h2>
+            <h2 class="text-center section-title mb-4">Danh sách thành viên</h2>
 
-            <table class="table table-striped mt-4">
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Họ tên</th>
-                        <th>Ngày sinh</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>10</td>
-                        <td>Bùi Phát Đạt</td>
-                        <td>18/06/2007</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>Lâm Ngọc Hậu</td>
-                        <td>18/05/2008</td>
-                    </tr>
-                    <tr>
-                        <td>41</td>
-                        <td>Trần Quang Thắng</td>
-                        <td>29/12/2008</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="row g-4">
+
+                <!-- Thành viên 1 -->
+                <div class="col-md-4">
+                    <div class="card member-card shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <img src="images/face.png" class="member-avatar mb-3" alt="Bùi Phát Đạt">
+                            <h5 class="card-title">Bùi Phát Đạt</h5>
+                            <p class="card-text">Ngày sinh: 18/06/2007</p>
+                            <p class="card-text">Thành viên</p>
+                            <span class="badge bg-primary">STT: 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 2 -->
+                <div class="col-md-4">
+                    <div class="card member-card shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <img src="images/face.png" class="member-avatar mb-3" alt="Lâm Ngọc Hậu">
+                            <h5 class="card-title">Lâm Ngọc Hậu</h5>
+                            <p class="card-text">Ngày sinh: 18/05/2008</p>
+                            <p class="card-text">Trưởng nhóm</p>
+                            <span class="badge bg-primary">STT: 13</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thành viên 3 -->
+                <div class="col-md-4">
+                    <div class="card member-card shadow-sm h-100 text-center">
+                        <div class="card-body">
+                            <img src="images/face.png" class="member-avatar mb-3" alt="Trần Quang Thắng">
+                            <h5 class="card-title">Trần Quang Thắng</h5>
+                            <p class="card-text">Ngày sinh: 29/12/2008</p>
+                            <p class="card-text">Thành viên</p>
+                            <span class="badge bg-primary">STT: 41</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
 
