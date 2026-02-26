@@ -1,0 +1,21 @@
+.timeline {
+    border-left: 3px solid #007bff;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    left: -28px;
+    top: 5px;
+}
