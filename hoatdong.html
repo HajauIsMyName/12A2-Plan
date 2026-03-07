@@ -109,16 +109,48 @@
                             alt="Đồi chè Tam Châu">
 
                         <div class="card-body text-center d-flex flex-column justify-content-center">
-                            <h5 class="card-title mb-3 fw-bold">
-                                Đồi chè Tam Châu
-                            </h5>
+                            <h5 class="card-title mb-3 fw-bold">Đồi chè Tam Châu</h5>
                             <p class="card-text typing-text"
                                 data-text="Cả lớp được nghe thuyết mình về cách trồng và thu hoạch chè, đây là ảnh cả nhóm check-in tại đây.">
                             </p>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-6">
+                    <div class="card shadow activity-card h-100 video-card" data-bs-toggle="modal"
+                        data-bs-target="#video1Modal">
+                        <div class="video-overlay">
+                            <!-- Thumbnail -->
+                            <img src="./images/video-thumb-1.jpg" class="card-img-top activity-img"
+                                alt="Video khoảnh khắc vui nhộn">
+
+                            <!-- Play icon -->
+                            <div class="play-icon">▶</div>
+                            <div class="video-text">Bấm vào card để xem</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Video kỷ niệm</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 6 -->
+                <div class="col-md-6">
+                    <div class="card shadow activity-card h-100 video-card" data-bs-toggle="modal"
+                        data-bs-target="#video2Modal">
+                        <div class="video-overlay">
+                            <img src="./images/video-thumb-2.jpg" class="card-img-top activity-img" alt="Video kỷ niệm">
+                            <div class="play-icon">▶</div>
+                            <div class="video-text">Bấm vào card để xem</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="fw-bold">Video kỷ niệm</h5>
+                        </div>
+                    </div>
+                </div>
         </section>
     </main>
 
@@ -133,7 +165,33 @@
         <img id="viewerImg" src="">
     </div>
 
+    <!-- Modal Video 1 -->
+    <div class="modal fade" id="video1Modal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <video width="100%" controls>
+                        <source src="./videos/video-1.mp4" type="video/mp4">
+                        Trình duyệt không hỗ trợ video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal Video 2 -->
+    <div class="modal fade" id="video2Modal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <video width="100%" controls>
+                        <source src="./videos/video-2.mp4" type="video/mp4">
+                        Trình duyệt không hỗ trợ video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./js/typing.js"></script>
