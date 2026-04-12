@@ -1,49 +1,187 @@
 /* =====================================================
-   1. LAYOUT
+   1. GLOBAL & LAYOUT
 ===================================================== */
 
-.footer {
-  background: #1e1e1e;
-  color: #fff;
-  padding: 30px 0;
-  margin-top: 50px;
+section {
+  background: #fff;
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 50px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
+.footer {
+  background: #111;
+  color: #aaa;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+
 /* =====================================================
-   2. CARD COMPONENTS
+   2. TYPOGRAPHY & TITLES
+===================================================== */
+
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+
+  /* animation */
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: slideInCenter 0.9s ease forwards;
+}
+
+.section-title::after {
+  content: "";
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #ffc107, #ff9800);
+  position: absolute;
+  bottom: -10px;
+  left: 20%;
+  border-radius: 5px;
+}
+
+
+/* =====================================================
+   3. CARD SYSTEM
 ===================================================== */
 
 .card {
-  transition: 0.3s;
+  border: none;
+  border-radius: 18px;
+  transition: all 0.3s ease;
 }
 
 .activity-card {
   cursor: pointer;
   overflow: hidden;
-  transition: 0.3s ease;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
 }
 
 .activity-card .card-body {
   height: 100%;
+  padding: 25px;
 }
 
+/* image */
 .activity-img {
-  height: 220px;
+  height: 240px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.3s;
 }
 
+/* hover */
 .activity-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .activity-card:hover .activity-img {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  filter: brightness(1.05);
 }
 
+.activity-card h5 {
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.activity-card:hover h5 {
+  color: #ffc107;
+}
+
+.activity-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+
 /* =====================================================
-   3. TEXT EFFECTS
+   4. MEMBER
+===================================================== */
+
+.member-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   5. VIDEO COMPONENT
+===================================================== */
+
+.video-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-overlay img {
+  filter: brightness(0.7);
+  transition: 0.3s;
+}
+
+.video-card:hover .video-overlay img {
+  filter: brightness(0.9);
+}
+
+.video-text {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+
+/* =====================================================
+   6. PLAY ICON
+===================================================== */
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  color: #fff;
+
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.video-card:hover .play-icon {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: #ffc107;
+  color: #000;
+}
+
+
+/* =====================================================
+   7. TEXT EFFECTS
 ===================================================== */
 
 .typing-text {
@@ -53,20 +191,9 @@
   justify-content: center;
 }
 
-/* =====================================================
-   4. MEMBER COMPONENT
-===================================================== */
-
-.member-avatar {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
 
 /* =====================================================
-   5. IMAGE VIEWER (LIGHTBOX)
+   8. IMAGE VIEWER (LIGHTBOX)
 ===================================================== */
 
 .image-viewer {
@@ -83,6 +210,7 @@
   max-width: 90%;
   max-height: 90%;
   object-fit: contain;
+  animation: zoomIn 0.3s ease;
 }
 
 .close-btn {
@@ -94,67 +222,62 @@
   cursor: pointer;
 }
 
-/* =====================================================
-   6. VIDEO CARD
-===================================================== */
-
-.video-overlay {
-  position: relative;
-  overflow: hidden;
-}
-
-.video-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.video-card:hover .video-text {
-  opacity: 1;
-}
 
 /* =====================================================
-   7. PLAY ICON
+   9. ANIMATIONS
 ===================================================== */
 
-.play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  transition: transform 0.3s;
-}
-
-.video-card:hover .play-icon {
-  transform: translate(-50%, -50%) scale(1.15);
-}
-
-/* =====================================================
-   8. ANIMATIONS
-===================================================== */
-
+/* typing cursor */
 #typing-text::after {
   content: "|";
   margin-left: 5px;
   animation: blink 1s infinite;
+}
+
+/* scroll animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delay */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+.delay-3 {
+  transition-delay: 0.6s;
+}
+
+
+/* keyframes */
+@keyframes slideInCenter {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes blink {
@@ -169,5 +292,4 @@
   75% {
     opacity: 0;
   }
-
 }
